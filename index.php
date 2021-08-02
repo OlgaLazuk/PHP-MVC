@@ -6,7 +6,6 @@ function Week($dayNumber) {
 }
 echo Week(3);
 
-
 // 2. Создайте функцию, которая обрезает строку до нужного размера.  Необходимо учесть, что слово в конце строки не должно быть обрезано
 function cutStr($str, $length=2, $postfix='...')
 {
@@ -18,30 +17,34 @@ function cutStr($str, $length=2, $postfix='...')
 }
 echo cutStr('Hello world');
 
-
 // 3.  Написать функцию, которая будет менять порядок слов в строке на обратный
-$str = 'i am a string';
-$str = explode(' ', $str);
-list($str[1], $str[3]) = [$str[3], $str[1]];
-$str = implode(' ', $str);
-print($str);
-
+$str = 'I am a string';
+function reverse($line)
+{
+    $arr = explode(' ', $line);
+    $arr = array_reverse($arr);
+    $arr = implode(' ', $arr);
+    return ($arr);
+}
+print_r(reverse($str));
 
 // 4. Написать функцию, которая вычисляет среднее арифметическое элементов массива, переданного ей в качестве аргумента.  Не использовать array_sum и т.д. Простым перебором через цикл
-$nums = array(2, 3, 4, 5, 6, 7, 8, 9, 10);
-$sum = 0;
-for($i=0;$i<count($nums);$i++){
-    $sum += $nums[$i];
+function averageValue($a){
+    $sum = 0;
+    foreach ($a as $v) {
+        $sum += $v;
+        $avVal = $sum / count($a);
+    }
+    echo $avVal;
+    return $sum;
 }
-echo $sum/count($nums);
-
+print_r(averageValue([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
 
 // 5.  Написать функцию, которая генерирует массив случайных значений. Количество элементов массива передается в качестве аргумента
-foreach (range(0, 10) as $number) {
-    echo $number;
+function randVal($num)
+{
+    foreach (range(0, 10) as $num)
+        $arr[] = rand();
+    return $arr;
 }
-
-echo "\n";
-
-
-
+print_r(randVal(5));
