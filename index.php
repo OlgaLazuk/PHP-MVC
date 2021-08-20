@@ -1,50 +1,74 @@
 <?php
-// 1.  Сделайте функцию, которая принимает параметром число от 1 до 7, а возвращает день недели на русском языке.
-function Week($dayNumber) {
-    $arr = [1=>'Понедельник', 2=>'Вторник', 3=>'Среда', 4=>'Четверг', 5=>'Пятница', 6=>'Суббота', 7=>'Воскресенье'];
-    return $arr[$dayNumber];
-}
-echo Week(3);
 
-// 2. Создайте функцию, которая обрезает строку до нужного размера.  Необходимо учесть, что слово в конце строки не должно быть обрезано
-function cutStr($str, $length=2, $postfix='...')
-{
-    if ( strlen($str) <= $length)
-        return $str;
+include_once 'Worker.php';
+include_once 'User.php';
+include_once 'Student.php';
+include_once 'Driver.php';
+//task_1
+//$worker1 = new Worker();
+//$worker1->name = 'Иван';
+//$worker1->age = 25;
+//$worker1->salary = 1000;
+//
+//$worker2 = new Worker();
+//$worker2->name = 'Вася';
+//$worker2->age = 26;
+//$worker2->salary = 2000;
 
-    $temp = substr($str, 0, $length);
-    return substr($temp, 0, strrpos($temp, ' ') ) . $postfix;
-}
-echo cutStr('Hello world');
+//echo $worker1->salary + $worker2->salary;
+//echo ' <br/>';
+//echo $worker1->age +$worker2->age;
 
-// 3.  Написать функцию, которая будет менять порядок слов в строке на обратный
-$str = 'I am a string';
-function reverse($line)
-{
-    $arr = explode(' ', $line);
-    $arr = array_reverse($arr);
-    $arr = implode(' ', $arr);
-    return ($arr);
-}
-print_r(reverse($str));
 
-// 4. Написать функцию, которая вычисляет среднее арифметическое элементов массива, переданного ей в качестве аргумента.  Не использовать array_sum и т.д. Простым перебором через цикл
-function averageValue($a){
-    $sum = 0;
-    foreach ($a as $v) {
-        $sum += $v;
-        $avVal = $sum / count($a);
-    }
-    echo $avVal;
-    return $sum;
-}
-print_r(averageValue([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+//task_2
+//$worker1 = new Worker();
+//$worker1->setName('Иван');
+//$worker1->setAge(25);
+//$worker1->setSalary(1000);
+//
+//$worker2 = new Worker();
+//$worker2->setName('Вася');
+//$worker2->setAge(26);
+//$worker2->setSalary(2000);
+//
+//echo $worker1->getSalary() + $worker2->getSalary();
+//echo ' <br/>';
+//echo $worker1->getAge() + $worker2->getAge();
 
-// 5.  Написать функцию, которая генерирует массив случайных значений. Количество элементов массива передается в качестве аргумента
-function randVal($num)
-{
-    foreach (range(0, 10) as $num)
-        $arr[] = rand();
-    return $arr;
-}
-print_r(randVal(5));
+//task_3
+//$worker1 = new Worker();
+//$worker1->setName('Иван');
+//$worker1->setAge(125);
+//$worker1->setSalary(1000);
+//
+//$worker2 = new Worker();
+//$worker2->setName('Вася');
+//$worker2->setAge(126);
+//$worker2->setSalary(2000);
+//
+//echo $worker1->getSalary() + $worker2->getSalary();
+//echo ' <br/>';
+//echo $worker1->getAge() + $worker2->getAge();
+
+//task_4
+//$worker = new Worker('Дима', 25, 1000);
+//echo $worker->getSalary() * $worker->getAge();
+
+//task_5
+ $worker1 = new Worker();
+ $worker1->setName('Иван');
+ $worker1->setAge(25);
+ $worker1->setSalary(1000);
+
+ $worker2 = new Worker();
+$worker2->setName('Вася');
+$worker2->setAge(26);
+$worker2->setSalary(2000);
+
+
+ $user = new User();
+ $student = new Student();
+ echo $worker1->getSalary() + $worker2->getSalary();
+
+//task_6
+$driver = new Driver();
