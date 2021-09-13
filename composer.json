@@ -1,16 +1,14 @@
 {
-    "name": "olga_lazuk/project1",
+    "name": "vagrant/tms_php",
     "autoload": {
         "psr-4": {
-            "App\\": "app/",
-            "Core\\": "core/"
+            "App\\": "app/"
         }
     },
-    "authors": [
-        {
-            "name": "Olga Lazuk",
-            "email": "lazuk81@mail.ru"
-        }
-    ],
-    "require": {}
+    "require": {
+      "ext-mbstring": "*"
+    },
+    "require-dev": {
+
+    }
 }
